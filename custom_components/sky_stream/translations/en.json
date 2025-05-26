@@ -1,0 +1,17 @@
+{
+  "title": "Sky Stream",
+  "config": {
+    "error": {
+      "data": "Enter a name for your Sky Stream Puck",
+      "select": "You must either discover or enter details manually"
+    },
+    "step": {
+      "user": {
+        "data": {
+          "name": "Name of the Sky Stream Puck",
+          "broadlink_entity": "Select the Broadlink remote"
+        }
+      }
+    }
+  }
+}

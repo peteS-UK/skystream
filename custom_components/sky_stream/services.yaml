@@ -1,0 +1,44 @@
+send_command:
+  name: Send Command
+  description: Send command to Sky Stream
+  target:
+    entity:
+      integration: sky_stream
+      domain: media_player
+  fields:
+    command:
+      name: Command
+      description: 'The Command to send to the device.'
+      required: true
+      selector:
+        select:
+          multiple: false
+          options:
+            - play/pause
+            - next
+            - previous
+            - up
+            - down
+            - left
+            - right
+            - one
+            - two
+            - three
+            - four
+            - five
+            - six
+            - seven
+            - eight
+            - nine
+            - zero
+            - power
+            - colours
+            - menu
+            - ok
+            - back
+            - info
+            - home
+            - plus
+            - mute
+            - vol_up
+            - vol_down

@@ -1,0 +1,7 @@
+DOMAIN = "sky_stream"
+DEFAULT_NAME = "Sky Stream"
+SERVICE_SEND_COMMAND = "send_command"
+CONF_BROADLINK = "broadlink_entity"
+TITLE = "Sky Stream"
+MANUFACTURER = "Sky"
+MODEL = "Stream"
