@@ -7,7 +7,7 @@ from homeassistant.const import Platform
 
 _LOGGER = logging.getLogger(__name__)
 
-PLATFORMS = [Platform.MEDIA_PLAYER]
+PLATFORMS = [Platform.MEDIA_PLAYER, Platform.REMOTE]
 
 
 async def async_setup_entry(

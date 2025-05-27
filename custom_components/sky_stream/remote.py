@@ -18,8 +18,6 @@ from homeassistant.helpers.device_registry import DeviceInfo
 from .const import (
     DOMAIN,
     CONF_BROADLINK,
-    MANUFACTURER,
-    MODEL,
     COMMANDS,
 )
 
@@ -46,7 +44,7 @@ class Device(RemoteEntity):
         self._unique_id = f"{DOMAIN}_" + name.replace(" ", "_").replace(
             "-", "_"
         ).replace(":", "_")
-        self._name = f"Remote {name}"
+        self._name = "Remote"
         self._broadlink_entity = broadlink_entity
 
     @property
@@ -68,10 +66,7 @@ class Device(RemoteEntity):
             identifiers={
                 # Serial numbers are unique identifiers within a specific domain
                 (DOMAIN, self._unique_id)
-            },
-            name=self._name,
-            manufacturer=MANUFACTURER,
-            model=MODEL,
+            }
         )
 
     @property
@@ -102,6 +97,9 @@ class Device(RemoteEntity):
         await self._send_broadlink_command("power")
 
     async def async_turn_on(self) -> None:
+        await self._send_broadlink_command("power")
+
+    async def async_toggle(self) -> None:
         await self._send_broadlink_command("power")
 
     async def async_send_command(self, command: Iterable[str], **kwargs: Any) -> None:
